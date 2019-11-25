@@ -7,5 +7,4 @@ C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\obj\Debug\VeriTabaniO
 C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\obj\Debug\VeriTabaniOdevi.csproj.GenerateResource.cache
 C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\obj\Debug\VeriTabaniOdevi.exe
 C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\obj\Debug\VeriTabaniOdevi.pdb
-C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\bin\Debug\Database1.mdf
-C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\bin\Debug\Database1_log.ldf
+C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\obj\Debug\VeriTabaniOdevi.Form2.resources
