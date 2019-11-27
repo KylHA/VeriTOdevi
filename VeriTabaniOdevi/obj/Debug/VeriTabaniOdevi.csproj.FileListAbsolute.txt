@@ -8,3 +8,9 @@ C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\obj\Debug\VeriTabaniO
 C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\obj\Debug\VeriTabaniOdevi.exe
 C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\obj\Debug\VeriTabaniOdevi.pdb
 C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\obj\Debug\VeriTabaniOdevi.Form2.resources
+C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\bin\Debug\MySql.Data.dll
+C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\bin\Debug\Google.Protobuf.dll
+C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\bin\Debug\Renci.SshNet.dll
+C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\bin\Debug\MySql.Data.xml
+C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\obj\Debug\VeriTabaniOdevi.csproj.CopyComplete
