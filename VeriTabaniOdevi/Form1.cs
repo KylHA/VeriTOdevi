@@ -30,7 +30,7 @@ namespace VeriTabaniOdevi
         {
 
             server = "localhost";
-            database = "new_schema";
+            database = "veritabanidb";
             uid = "root";
             password = "Nanomek23271973";
             string connectionString;
@@ -47,7 +47,7 @@ namespace VeriTabaniOdevi
             {
                 MessageBox.Show(ex.Message);
             }
-            String query = "select * from data where username = '" + textBox1.Text + "'and password = '" + this.textBox2.Text + "'";
+            String query = "select * from login where user_name = '" + textBox1.Text + "'and user_password = '" + this.textBox2.Text + "'";
             MySqlCommand cmd = new MySqlCommand(query, connection);
             MySqlDataReader dbr;
 
@@ -60,63 +60,17 @@ namespace VeriTabaniOdevi
             }
             if (count == 1)
             {
-                this.Visible = false;
-                Form2 f2 = new Form2(); //this is the change, code for redirect  
-                f2.ShowDialog();
+                //this.Visible = false;
+                //Form2 f2 = new Form2(); //this is the change, code for redirect  
+                //f2.ShowDialog();
+
+                MessageBox.Show("Succesfully connected rerouting to app form");
             }
             else if (count > 1)
             {
                 MessageBox.Show("Duplicate username and password", "login page");
             }
-            
-            //try
-            //{
-            //    if (!(textBox1.Text == string.Empty))
-            //    {
-            //        if (!(textBox2.Text == string.Empty))
-            //        {
-            //            String str = "Server=localhost;database=MySQL80;UID=root;password=Nanomek23271973";//Connect Hatası Veriyor Bakılacak
-            //            String query = "select * from data where username = '" + textBox1.Text + "'and password = '" + this.textBox2.Text + "'";
-            //            SqlConnection con = new SqlConnection(str);
-            //            SqlCommand cmd = new SqlCommand(query, con);
-            //            SqlDataReader dbr;
-            //            con.Open();
-            //            dbr = cmd.ExecuteReader();
-            //            int count = 0;
-            //            while (dbr.Read())
-            //            {
-            //                count = count + 1;
-            //            }
-            //            if (count == 1)
-            //            {
-            //                this.Visible = false;
-            //                Form2 f2 = new Form2(); //this is the change, code for redirect  
-            //                f2.ShowDialog();
-            //            }
-            //            else if (count > 1)
-            //            {
-            //                MessageBox.Show("Duplicate username and password", "login page");
-            //            }
-            //            else
-            //            {
-            //                MessageBox.Show(" username and password incorrect", "login page");
-            //            }
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show(" password empty", "login page");
-            //        }
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show(" username empty", "login page");
-            //    }
-            //    con.Close();
-            //}
-            //catch (Exception es)
-            //{
-            //    MessageBox.Show(es.Message);
-            //}
+            else { MessageBox.Show("Username or password dont match"); }
         }
 
         private void button2_Click(object sender, EventArgs e)
