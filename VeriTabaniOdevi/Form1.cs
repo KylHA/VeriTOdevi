@@ -30,8 +30,8 @@ namespace VeriTabaniOdevi
         {
 
             server = "localhost";
-            database = "MySQL80";
-            uid = "testuser";
+            database = "new_schema";
+            uid = "root";
             password = "Nanomek23271973";
             string connectionString;
             connectionString = "Server=" + server + ";" + "Database=" +
@@ -50,28 +50,25 @@ namespace VeriTabaniOdevi
             String query = "select * from data where username = '" + textBox1.Text + "'and password = '" + this.textBox2.Text + "'";
             MySqlCommand cmd = new MySqlCommand(query, connection);
             MySqlDataReader dbr;
+
+            dbr = cmd.ExecuteReader();
+
+            int count = 0;
+            while (dbr.Read())
+            {
+                count = count + 1;
+            }
+            if (count == 1)
+            {
+                this.Visible = false;
+                Form2 f2 = new Form2(); //this is the change, code for redirect  
+                f2.ShowDialog();
+            }
+            else if (count > 1)
+            {
+                MessageBox.Show("Duplicate username and password", "login page");
+            }
             
-            //dbr = cmd.ExecuteReader();
-            
-            //int count = 0;
-            //while (dbr.Read())
-            //{
-            //    count = count + 1;
-            //}
-            //if (count == 1)
-            //{
-            //    this.Visible = false;
-            //    Form2 f2 = new Form2(); //this is the change, code for redirect  
-            //    f2.ShowDialog();
-            //}
-            //else if (count > 1)
-            //{
-            //    MessageBox.Show("Duplicate username and password", "login page");
-            //}
-            //else
-            //{
-            //    MessageBox.Show(" username and password incorrect", "login page");
-            //}
             //try
             //{
             //    if (!(textBox1.Text == string.Empty))
