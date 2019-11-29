@@ -16,6 +16,7 @@ namespace VeriTabaniOdevi
     public partial class Form1 : Form
     {
         private MySqlConnection mysqlconnection;
+
         public Form1()
         {
             InitializeComponent();
@@ -36,7 +37,6 @@ namespace VeriTabaniOdevi
                 MessageBox.Show(ex.Message);
             }
 
-            
             MySqlCommand cmd = new MySqlCommand(connect_to_DB.Return_UserName_and_Password_Query(UserName_BOX.Text, Password_BOX.Text), mysqlconnection);
 
             MySqlDataReader dbr;
@@ -45,21 +45,12 @@ namespace VeriTabaniOdevi
 
             int count = 0;
             while (dbr.Read())
-            {
                 count = count + 1;
-            }
+            
             if (count == 1)
-            {
-                //this.Visible = false;
-                //Form2 f2 = new Form2(); //this is the change, code for redirect  
-                //f2.ShowDialog();
-
                 MessageBox.Show("Succesfully connected rerouting to app form");
-            }
-            else if (count > 1)
-            {
-                MessageBox.Show("Duplicate username and password", "login page");
-            }
+            
+
             else { MessageBox.Show("Username or password dont match"); }
         }
 
@@ -68,7 +59,5 @@ namespace VeriTabaniOdevi
             Form2 f2 = new Form2();
             f2.ShowDialog();
         }
-        public void ShowForm()
-        { this.Visible = true; }
     }
 }
