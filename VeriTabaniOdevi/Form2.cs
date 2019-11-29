@@ -15,11 +15,7 @@ namespace VeriTabaniOdevi
     {
 
         private MySqlConnection connection;
-        private string server;
-        private string database;
-        private string uid;
-        private string password;
-
+        
         public Form2()
         {
             InitializeComponent();
@@ -32,15 +28,10 @@ namespace VeriTabaniOdevi
 
         private void button2_Click(object sender, EventArgs e)
         {
-            server = "localhost";
-            database = "veritabanidb";
-            uid = "root";
-            password = "Nanomek23271973";
-            string connectionString;
-            connectionString = "Server=" + server + ";" + "Database=" +
-            database + ";" + "Uid=" + uid + ";" + "Pwd=" + password + ";";
-
-            connection = new MySqlConnection(connectionString);
+           
+            
+            Connection_user connect_to_db = new Connection_user();
+            connection = new MySqlConnection(connect_to_db.Connect_to_DB());
 
             try
             {
@@ -51,8 +42,8 @@ namespace VeriTabaniOdevi
                 MessageBox.Show(ex.Message);
             }
 
-            String query = "select * from login where user_name = '"+textBox1.Text+"'";
-            MySqlCommand cmd = new MySqlCommand(query, connection);
+            
+            MySqlCommand cmd = new MySqlCommand(connect_to_db.Return_UserName_Query(textBox1.Text), connection);
             MySqlDataReader dbr;
 
             dbr = cmd.ExecuteReader();
@@ -70,8 +61,8 @@ namespace VeriTabaniOdevi
             else
             {
                 dbr.Close();
-                query = "INSERT INTO login(user_name, user_password) VALUES("+"'"+textBox1.Text+"'"+","+textBox2.Text+")" ;
-                cmd = new MySqlCommand(query, connection);
+                
+                cmd = new MySqlCommand(connect_to_db.Insert_UserName_and_Password_Query(textBox1.Text,textBox2.Text), connection);
                 cmd.ExecuteNonQuery();
             }
         }

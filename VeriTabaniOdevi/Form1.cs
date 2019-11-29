@@ -15,12 +15,7 @@ namespace VeriTabaniOdevi
     
     public partial class Form1 : Form
     {
-        private MySqlConnection connection;
-        private string server;
-        private string database;
-        private string uid;
-        private string password;
-        public bool Flag = false;
+        private MySqlConnection mysqlconnection;
         public Form1()
         {
             InitializeComponent();
@@ -28,27 +23,22 @@ namespace VeriTabaniOdevi
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            server = "localhost";
-            database = "veritabanidb";
-            uid = "root";
-            password = "Nanomek23271973";
-            string connectionString;
-            connectionString = "Server=" + server + ";" + "Database=" +
-            database + ";" + "Uid=" + uid + ";" + "Pwd=" + password + ";";
-
-            connection = new MySqlConnection(connectionString);
+            Connection_user connect_to_DB = new Connection_user();
+            
+            mysqlconnection =new MySqlConnection(connect_to_DB.Connect_to_DB());
 
             try
             {
-                connection.Open();
+                mysqlconnection.Open();
             }
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            String query = "select * from login where user_name = '" + textBox1.Text + "'and user_password = '" + this.textBox2.Text + "'";
-            MySqlCommand cmd = new MySqlCommand(query, connection);
+
+            
+            MySqlCommand cmd = new MySqlCommand(connect_to_DB.Return_UserName_and_Password_Query(UserName_BOX.Text, Password_BOX.Text), mysqlconnection);
+
             MySqlDataReader dbr;
 
             dbr = cmd.ExecuteReader();
