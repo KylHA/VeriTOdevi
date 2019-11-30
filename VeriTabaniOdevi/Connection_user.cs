@@ -40,5 +40,11 @@ namespace VeriTabaniOdevi
             String query = "INSERT INTO login(user_name, user_password) VALUES(" + "'" + name + "'" + "," + password+ ")";
             return query;
         }
+
+        public string Return_ALL_University_name_and_dep_NN_Query()
+        {
+            String query = "select University_name_and_dep from okul where University_name_and_dep is not null";
+            return query;
+        }
     }
 }
