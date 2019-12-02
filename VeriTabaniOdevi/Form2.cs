@@ -18,36 +18,36 @@ namespace VeriTabaniOdevi
        
         public Form2()
         {
-            List<string> Db_read_list = new List<string>();
+            
             
             
             InitializeComponent();
+            //List<string> Db_read_list = new List<string>();
+            //Connection_user connect_to_db = new Connection_user();
+            //connection = new MySqlConnection(connect_to_db.Connect_to_DB());
 
-            Connection_user connect_to_db = new Connection_user();
-            connection = new MySqlConnection(connect_to_db.Connect_to_DB());
+            //try
+            //{
+            //    connection.Open();
+            //}
+            //catch (MySqlException ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            //MySqlCommand cmd = new MySqlCommand(connect_to_db.Return_ALL_University_name_and_dep_NN_Query(), connection);
+            //MySqlDataReader dbr;
 
-            try
-            {
-                connection.Open();
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            MySqlCommand cmd = new MySqlCommand(connect_to_db.Return_ALL_University_name_and_dep_NN_Query(), connection);
-            MySqlDataReader dbr;
+            //dbr = cmd.ExecuteReader();
+            //while (dbr.Read())
+            //{
+            //    Db_read_list.Add(dbr[0].ToString());
+            //}
 
-            dbr = cmd.ExecuteReader();
-            while (dbr.Read())
-            {
-                Db_read_list.Add(dbr[0].ToString());
-            }
+            //string[] string_list = new string[Db_read_list.Count];
 
-            string[] string_list = new string[Db_read_list.Count];
+            //string_list = Db_read_list.ToArray();
 
-            string_list = Db_read_list.ToArray();
-
-            comboBox1.Items.AddRange(string_list);
+            //comboBox1.Items.AddRange(string_list);
         }
 
         private void button1_Click(object sender, EventArgs e)

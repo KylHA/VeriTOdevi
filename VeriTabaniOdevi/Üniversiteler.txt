@@ -1,0 +1,206 @@
+Kanuni University
+İpek University
+Turgut Özal University
+Gülhane Military Medical Academy (Military)
+Military Academy (Military)
+Bursa Orhangazi University	Foundation	2011	2016
+Selahaddin Eyyubi University
+Zirve University
+Fatih University	Foundation	1996	2016
+Murat Hudavendigar University	Foundation	2012	2016
+Süleyman Şah University	Foundation	2010	2016
+Air Force Academy (military)	Special	1951	2016
+Naval Academy (military)	Special	1773	2016
+Turkish War Colleges (military)	Special	1848	2016
+Gediz University	Foundation	2008	2016
+İzmir University	Foundation	2007	2016
+Şifa University	Foundation	2010	2016
+Melikşah University	Foundation	2008	2016
+Mevlana University	Foundation	2009	2016
+Canik Başarı University
+Adana Science and Technology University	State	2011
+Çukurova University	State	1973
+Adıyaman University	State	2006
+Afyonkarahisar	Afyon Kocatepe University	State	1992
+Ağrı İbrahim Çeçen University	State	2007
+Aksaray University	State	2006
+Amasya University	State	2006
+Ankara University	State	1946
+Ankara Fine Arts University	State	2017
+Ankara Hacı Bayram Veli University	State	2018
+Social Sciences University of Ankara	State	2013
+Gazi University	State	1982
+Hacettepe University	State	1967
+Middle East Technical University	State	1956
+Yıldırım Beyazıt University	State	2010
+Anka Technology University	Foundation	2013
+Atılım University	Foundation	1997
+Başkent University	Foundation	1994
+Çankaya University	Foundation	1997
+İhsan Doğramacı Bilkent University	Foundation	1985
+Ostim Technical University	Foundation	2017
+TED University	Foundation	2009
+TOBB University of Economics and Technology	Foundation	2003
+Ufuk University	Foundation	1999
+University of Turkish Aeronautical Association	Foundation	2011
+Yüksek İhtisas University	Foundation	2013
+Police Academy (Police)	Special	1937
+Akdeniz University	State	1982
+Alaaddin Keykubat University	State	2015
+Hamdullah Emin Pasa University	Foundation	2011
+AKEV University	Foundation	2015
+Bilim University	Foundation	2010
+Ardahan University	State	2008
+Artvin Çoruh University	State	2007
+Aydın Adnan Menderes University	State	1992
+Balıkesir University	State	1992
+Bandırma Onyedi Eylül University	State	2015
+Bartın University	State	2008
+Batman University	State	2007
+Bayburt University	State	2008
+Bilecik Şeyh Edebali University	State	2007
+Bingöl University	State	2007
+Bitlis Eren University	State	2007
+Bolu Abant Izzet Baysal University	State	1992
+Burdur Mehmet Akif Ersoy University	State	2006
+Bursa Technical University	State	2010
+Uludağ University	State	1975
+Çanakkale Onsekiz Mart University	State	1992
+Çankırı Karatekin University	State	2007
+Hitit University	State	2006
+Pamukkale University	State	1992
+Dicle University	State	1973
+Düzce University	State	2006
+Trakya University	State	1982
+Fırat University	State	1975
+Erzincan Binali Yıldırım University	State	2006
+Atatürk University	State	1957
+Technical University	State	2010
+Anadolu University	State	1973
+Eskişehir Osmangazi University	State	1993
+Eskişehir Technical University	State	2018
+Gaziantep University	State	1987
+Gaziantep University of Science and Technology	State	2018
+Hasan Kalyoncu University	Foundation	2008
+Sanko University	Foundation	2013
+Giresun University	State	2006
+Gümüşhane University	State	2008
+Hakkari University	State	2008
+Iskenderun Technical University	State	2015
+Hatay Mustafa Kemal University	State	1992
+Iğdır University	State	2008
+Süleyman Demirel University	State	1992
+Boğaziçi University	State	1863
+Galatasaray University	State	1994
+Istanbul Medeniyet University	State	2010
+Istanbul Technical University	State	1773
+Istanbul University	State	1453
+Marmara University	State	1883
+Mimar Sinan University of Fine Arts	State	1982
+Turkey International Islam, Science and Technology University	State	2015
+Turkish-German University	State	2010
+Turkish Health Sciences University	State	2015
+Yıldız Technical University	State	1911
+Acıbadem University	Foundation	2007
+Ayvansaray University	Foundation	2009
+Bahçeşehir University	Foundation	1998
+Beykent University	Foundation	1997
+Bezmialem Foundation University	Foundation	2010
+Biruni University	Foundation	2014
+Doğuş University	Foundation	1997
+Fatih Sultan Mehmet University	Foundation	2010
+Gedik University	Foundation	2011
+Haliç University	Foundation	1998
+Işık University	Foundation	1996
+Ibn Haldun University	Foundation	2015
+Istanbul 29 Mayıs University	Foundation	2010
+Istanbul Arel University	Foundation	2007
+Istanbul Aydın University	Foundation	2007
+Istanbul Bilgi University	Foundation	1996
+Istanbul Bilim University	Foundation	2006
+Istanbul Commerce University	Foundation	2001
+Istanbul Esenyurt University	Foundation	2013
+Istanbul Gelişim University	Foundation	2011
+Istanbul Kemerburgaz University	Foundation	2008
+Istanbul Kent University	Foundation	2016
+Istanbul Kültür University	Foundation	1997
+Istanbul Medipol University	Foundation	2009
+Istanbul Rumeli University	Foundation	2015
+Istanbul Sabahattin Zaim University	Foundation	2010
+Istanbul Şehir University	Foundation	2008
+Istinye University	Foundation	2015
+Kadir Has University	Foundation	1997
+Koç University	Foundation	1992
+Maltepe University	Foundation	1997
+MEF University	Foundation	2012
+Nişantaşı University	Foundation	2009
+Istanbul Okan University	Foundation	1999
+Özyeğin University	Foundation	2007
+Piri Reis University	Foundation	2008
+Sabancı University	Foundation	1996
+Üsküdar University	Foundation	2011
+Yeditepe University	Foundation	1996
+Yeni Yüzyıl University	Foundation	2009
+Dokuz Eylül University	State	1982
+Ege University	State	1955
+İzmir Institute of Technology	State	1992
+İzmir Kâtip Çelebi University	State	2010
+İzmir Bakırçay University	State	2016
+İzmir Democracy University	State	2016
+İzmir University of Economics	Foundation	2001
+Yaşar University	Foundation	2001
+Kahramanmaraş Sütçüimam University	State	1992
+Karabük University	State	2007
+Karamanoğlu Mehmetbey University	State	2007
+Kafkas University	State	1992
+Kastamonu University	State	2006
+Abdullah Gül University	State	2010
+Erciyes University	State	1978
+Nuh Naci Yazgan University	Foundation	2009
+Kırıkkale University	State	1992
+Kırklareli University	State	2007
+Kırşehir Ahi Evran University	State	2006
+Kilis 7 Aralık University	State	2007
+Gebze Technical University	State	2014
+Kocaeli University	State	1992
+Konya Technical University	State	2018
+Necmettin Erbakan University	State	2010
+Selçuk University	State	1975
+Konya Food and Agriculture University	Foundation	2013
+KTO Karatay University	Foundation	2009
+Kütahya Dumlupınar University	State	1992
+Kütahya University of Health Sciences	State	2018
+İnönü University	State	1975
+Malatya Turgut Özal University	State	2018
+Manisa Celal Bayar University	State	1992
+Mardin Artuklu University	State	2007
+Mersin University	State	1992
+Çağ University	Foundation	1997
+Toros University	Foundation	2009
+Muğla Sıtkı Koçman University	State	1992
+Muş Alparslan University	State	2007
+Nevşehir Hacı Bektaş Veli University	State	2007
+Ömer Halisdemir University	State	1992
+Ordu University	State	2006
+Osmaniye Korkut Ata University	State	2007
+Recep Tayyip Erdoğan University	State	2006
+Sakarya University	State	1992
+Sakarya University of Applied Sciences	State	2018
+Ondokuz Mayıs University	State	1975
+Samsun University	State	2018
+Siirt University	State	2007
+Sinop University	State	2007
+Sivas Cumhuriyet University	State	1974
+Sivas University of Science and Technology	State	2018
+Harran University	State	1992
+Şırnak University	State	2008
+Tekirdağ Namık Kemal University	State	2006
+Tokat Gaziosmanpaşa University	State	1992
+Karadeniz Technical University	State	1955
+Avrasya University	Foundation	2010
+Munzur University	State	2008
+Uşak University	State	2006
+Van Yüzüncü Yıl University	State	1982
+Yalova University	State	2008
+Yozgat Bozok University	State	2006
+Zonguldak Bülent Ecevit University

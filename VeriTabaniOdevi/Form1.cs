@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
-
+using System.IO;
 namespace VeriTabaniOdevi
 {
     
@@ -52,6 +52,18 @@ namespace VeriTabaniOdevi
             
 
             else { MessageBox.Show("Username or password dont match"); }
+
+            if (UserName_BOX.Text == "" && Password_BOX.Text == "")
+            {
+                ADMIN_Form admin_form = new ADMIN_Form();
+                this.Visible = false;
+                admin_form.ShowDialog();
+            }
+            //string[] file = File.ReadAllLines(@"C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\Üniversiteler.txt");
+            //string output_1 = file[0].Split('\t')[0];
+            
+            //string output_2 = file[0].Split('\t')[1];
+            //MessageBox.Show("first char is :" + output_1+ " / "+output_2);
         }
 
         private void button2_Click(object sender, EventArgs e)

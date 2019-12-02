@@ -32,18 +32,28 @@ namespace VeriTabaniOdevi
         }
         public string Return_UserName_Query(string name)
         {
-            String query = "select * from login where user_name = '" + name + "'"; 
+            String query = "select * from login where user_name = '" + name + "'";
             return query;
         }
-        public string Insert_UserName_and_Password_Query(string name,string password)
+        public string Insert_UserName_and_Password_Query(string name, string password)
         {
-            String query = "INSERT INTO login(user_name, user_password) VALUES(" + "'" + name + "'" + "," + password+ ")";
+            String query = "INSERT INTO login(user_name, user_password) VALUES(" + "'" + name + "'" + "," + password + ")";
             return query;
         }
 
         public string Return_ALL_University_name_and_dep_NN_Query()
         {
             String query = "select University_name_and_dep from okul where University_name_and_dep is not null";
+            return query;
+        }
+        public string Insert_University_name_and_dep_NN_Query(string uni_name, string dep_name)
+        {
+            String query = "INSERT INTO mezun_universite(Universite_Name,Universite_Bolum) VALUES(" + "'" + uni_name + "'" + ","+"'" + dep_name +"'"+ ")";
+            return query;
+        }
+        public string Delete_ALL_Table_Values(string table_name)
+        {
+            String query = "Delete from "+table_name;
             return query;
         }
     }
