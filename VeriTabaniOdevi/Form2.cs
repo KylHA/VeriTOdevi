@@ -71,7 +71,7 @@ namespace VeriTabaniOdevi
             }
 
 
-            MySqlCommand cmd = new MySqlCommand(connect_to_db.Return_UserName_Query(textBox1.Text), connection);
+            MySqlCommand cmd = new MySqlCommand(connect_to_db.Return_UserName_Query(U_Name.Text), connection);
             MySqlDataReader dbr;
 
             dbr = cmd.ExecuteReader();
@@ -90,12 +90,26 @@ namespace VeriTabaniOdevi
             {
                 dbr.Close();
 
-                if (textBox1.Text == "" || textBox2.Text == "")
+                if (U_Name.Text == "" || Pass.Text == "")
                     MessageBox.Show("* This areas cannot be empty");
                 else
                 {
-                    cmd = new MySqlCommand(connect_to_db.Insert_UserName_and_Password_Query(textBox1.Text, textBox2.Text), connection);
+                    string u_id="";
+                    cmd = new MySqlCommand(connect_to_db.Insert_UserName_and_Password_Query(U_Name.Text, Pass.Text), connection);
                     cmd.ExecuteNonQuery();
+                    cmd = new MySqlCommand(connect_to_db.Return_UserID_Query(U_Name.Text),connection);
+                    MySqlDataReader new_dbr;
+                    new_dbr = cmd.ExecuteReader();
+                    while (new_dbr.Read())
+                    {
+                        u_id = new_dbr[0].ToString();
+                    }
+                    new_dbr.Close();
+                    int id = Int32.Parse(u_id);
+                    cmd = new MySqlCommand(connect_to_db.Insert_Mezun_Query(id,NAME.Text, SURNAME.Text, Id_Box.Text, Date_P.Value.ToString(), Email_Box.Text, Okul_box.Text,
+                        Dep_Box.Text, Phone_Box.Text, Firma_Box.Text, Pos_Box.Text, Area_Box.Text, Lang_Box.Text, Cert_Box.Text), connection);
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
                 }
             }
         }

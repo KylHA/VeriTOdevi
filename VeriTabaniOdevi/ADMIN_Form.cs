@@ -25,10 +25,10 @@ namespace VeriTabaniOdevi
         private void button1_Click(object sender, EventArgs e)
         {
             //webScrapeForDATA();
-            executeSQLcommend();
+            executeSQLcommend_Insert_University();
             
         }
-        void executeSQLcommend()
+        void executeSQLcommend_Insert_University()
         {
             Connection_user connect_to_db = new Connection_user();
             connection = new MySqlConnection(connect_to_db.Connect_to_DB());
@@ -117,6 +117,44 @@ namespace VeriTabaniOdevi
             }
 
             MySqlCommand cmd=new MySqlCommand(connect_to_db.Delete_ALL_Table_Values("mezun_universite"),connection);
+            cmd.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Connection_user connect_to_db = new Connection_user();
+            connection = new MySqlConnection(connect_to_db.Connect_to_DB());
+
+            try
+            {
+                connection.Open();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MySqlCommand cmd = new MySqlCommand(connect_to_db.Delete_ALL_Table_Values("mezun"), connection);
+            cmd.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Connection_user connect_to_db = new Connection_user();
+            connection = new MySqlConnection(connect_to_db.Connect_to_DB());
+
+            try
+            {
+                connection.Open();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MySqlCommand cmd = new MySqlCommand(connect_to_db.Delete_ALL_Table_Values("login"), connection);
+            cmd.ExecuteNonQuery();
+            cmd = new MySqlCommand(connect_to_db.Reset_ALL_Table_Values(), connection);
             cmd.ExecuteNonQuery();
             connection.Close();
         }

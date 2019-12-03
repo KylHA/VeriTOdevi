@@ -56,7 +56,7 @@ namespace VeriTabaniOdevi
             if (UserName_BOX.Text == "" && Password_BOX.Text == "")
             {
                 ADMIN_Form admin_form = new ADMIN_Form();
-                this.Visible = false;
+                
                 admin_form.ShowDialog();
             }
             //string[] file = File.ReadAllLines(@"C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\Üniversiteler.txt");
