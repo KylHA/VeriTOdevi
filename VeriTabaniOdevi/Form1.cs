@@ -12,10 +12,10 @@ using MySql.Data.MySqlClient;
 using System.IO;
 namespace VeriTabaniOdevi
 {
-    
+    //Use (ctrl+k) + (ctrl+f) to fix formmatting
     public partial class Form1 : Form
     {
-        private MySqlConnection mysqlconnection;
+        private MySqlConnection connection;
 
         public Form1()
         {
@@ -25,19 +25,10 @@ namespace VeriTabaniOdevi
         private void button1_Click(object sender, EventArgs e)
         {
             Connection_user connect_to_DB = new Connection_user();
-            
-            mysqlconnection =new MySqlConnection(connect_to_DB.Connect_to_DB());
 
-            try
-            {
-                mysqlconnection.Open();
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            connection = Mysql_Connect(connection);
 
-            MySqlCommand cmd = new MySqlCommand(connect_to_DB.Return_UserName_and_Password_Query(UserName_BOX.Text, Password_BOX.Text), mysqlconnection);
+            MySqlCommand cmd = new MySqlCommand(connect_to_DB.Return_UserName_and_Password_Query(UserName_BOX.Text, Password_BOX.Text), connection);
 
             MySqlDataReader dbr;
 
@@ -46,22 +37,22 @@ namespace VeriTabaniOdevi
             int count = 0;
             while (dbr.Read())
                 count = count + 1;
-            
+
             if (count == 1)
                 MessageBox.Show("Succesfully connected rerouting to app form");
-            
+
 
             else { MessageBox.Show("Username or password dont match"); }
 
             if (UserName_BOX.Text == "" && Password_BOX.Text == "")
             {
                 ADMIN_Form admin_form = new ADMIN_Form();
-                
+
                 admin_form.ShowDialog();
             }
             //string[] file = File.ReadAllLines(@"C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\Üniversiteler.txt");
             //string output_1 = file[0].Split('\t')[0];
-            
+
             //string output_2 = file[0].Split('\t')[1];
             //MessageBox.Show("first char is :" + output_1+ " / "+output_2);
         }
@@ -70,6 +61,20 @@ namespace VeriTabaniOdevi
         {
             Form2 f2 = new Form2();
             f2.ShowDialog();
+        }
+        MySqlConnection Mysql_Connect(MySqlConnection connect)
+        {
+            Connection_user connect_to_db = new Connection_user();
+            connect = new MySqlConnection(connect_to_db.Connect_to_DB());
+            try
+            {
+                connect.Open();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return connect;
         }
     }
 }

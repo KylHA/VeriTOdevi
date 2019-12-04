@@ -11,16 +11,16 @@ using MySql.Data.MySqlClient;
 
 namespace VeriTabaniOdevi
 {
-    public partial class Form2 : Form 
+    public partial class Form2 : Form
     {
 
         private MySqlConnection connection;
-       
+
         public Form2()
         {
-            
-            
-            
+
+
+
             InitializeComponent();
             //List<string> Db_read_list = new List<string>();
             //Connection_user connect_to_db = new Connection_user();
@@ -53,23 +53,14 @@ namespace VeriTabaniOdevi
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Connection_user connect_to_db = new Connection_user();
-            connection = new MySqlConnection(connect_to_db.Connect_to_DB());
 
-            try
-            {
-                connection.Open();
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
+            connection = Mysql_Connect(connection);
 
             MySqlCommand cmd = new MySqlCommand(connect_to_db.Return_UserName_Query(U_Name.Text), connection);
             MySqlDataReader dbr;
@@ -94,10 +85,10 @@ namespace VeriTabaniOdevi
                     MessageBox.Show("* This areas cannot be empty");
                 else
                 {
-                    string u_id="";
+                    string u_id = "";
                     cmd = new MySqlCommand(connect_to_db.Insert_UserName_and_Password_Query(U_Name.Text, Pass.Text), connection);
                     cmd.ExecuteNonQuery();
-                    cmd = new MySqlCommand(connect_to_db.Return_UserID_Query(U_Name.Text),connection);
+                    cmd = new MySqlCommand(connect_to_db.Return_UserID_Query(U_Name.Text), connection);
                     MySqlDataReader new_dbr;
                     new_dbr = cmd.ExecuteReader();
                     while (new_dbr.Read())
@@ -106,12 +97,27 @@ namespace VeriTabaniOdevi
                     }
                     new_dbr.Close();
                     int id = Int32.Parse(u_id);
-                    cmd = new MySqlCommand(connect_to_db.Insert_Mezun_Query(id,NAME.Text, SURNAME.Text, Id_Box.Text, Date_P.Value.ToString(), Email_Box.Text, Okul_box.Text,
+                    cmd = new MySqlCommand(connect_to_db.Insert_Mezun_Query(id, NAME.Text, SURNAME.Text, Id_Box.Text, Date_P.Value.ToString(), Email_Box.Text, Okul_box.Text,
                         Dep_Box.Text, Phone_Box.Text, Firma_Box.Text, Pos_Box.Text, Area_Box.Text, Lang_Box.Text, Cert_Box.Text), connection);
                     cmd.ExecuteNonQuery();
                     connection.Close();
                 }
             }
+        }
+
+        MySqlConnection Mysql_Connect(MySqlConnection connect)
+        {
+            Connection_user connect_to_db = new Connection_user();
+            connect = new MySqlConnection(connect_to_db.Connect_to_DB());
+            try
+            {
+                connect.Open();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return connect;
         }
     }
 }
