@@ -18,9 +18,6 @@ namespace VeriTabaniOdevi
 
         public Form2()
         {
-
-
-
             InitializeComponent();
             //List<string> Db_read_list = new List<string>();
             //Connection_user connect_to_db = new Connection_user();

@@ -105,16 +105,7 @@ namespace VeriTabaniOdevi
         private void button2_Click(object sender, EventArgs e)
         {
             Connection_user connect_to_db = new Connection_user();
-            connection = new MySqlConnection(connect_to_db.Connect_to_DB());
-
-            try
-            {
-                connection.Open();
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            connection = Mysql_Connect(connection);
 
             MySqlCommand cmd=new MySqlCommand(connect_to_db.Delete_ALL_Table_Values("mezun_universite"),connection);
             cmd.ExecuteNonQuery();
@@ -124,16 +115,7 @@ namespace VeriTabaniOdevi
         private void button3_Click(object sender, EventArgs e)
         {
             Connection_user connect_to_db = new Connection_user();
-            connection = new MySqlConnection(connect_to_db.Connect_to_DB());
-
-            try
-            {
-                connection.Open();
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            connection = Mysql_Connect(connection);
             MySqlCommand cmd = new MySqlCommand(connect_to_db.Delete_ALL_Table_Values("mezun"), connection);
             cmd.ExecuteNonQuery();
             connection.Close();
@@ -142,21 +124,35 @@ namespace VeriTabaniOdevi
         private void button4_Click(object sender, EventArgs e)
         {
             Connection_user connect_to_db = new Connection_user();
-            connection = new MySqlConnection(connect_to_db.Connect_to_DB());
-
-            try
-            {
-                connection.Open();
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            connection = Mysql_Connect(connection);
             MySqlCommand cmd = new MySqlCommand(connect_to_db.Delete_ALL_Table_Values("login"), connection);
             cmd.ExecuteNonQuery();
             cmd = new MySqlCommand(connect_to_db.Reset_ALL_Table_Values(), connection);
             cmd.ExecuteNonQuery();
             connection.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Connection_user connect_to_db = new Connection_user();
+            connection =Mysql_Connect(connection);
+            MySqlCommand cmd = new MySqlCommand(connect_to_db.Create_Mezun_Table_Query(), connection);
+            cmd.ExecuteNonQuery();
+        }
+
+        MySqlConnection Mysql_Connect(MySqlConnection connect)
+        {
+            Connection_user connect_to_db = new Connection_user();
+            connect = new MySqlConnection(connect_to_db.Connect_to_DB());
+            try
+            {
+                connect.Open();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return connect;
         }
     }
 }
