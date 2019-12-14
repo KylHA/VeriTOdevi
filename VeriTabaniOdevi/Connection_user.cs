@@ -30,6 +30,11 @@ namespace VeriTabaniOdevi
             string query = "select * from login where user_name = '" + name + "'and user_password = '" + password + "'";
             return query;
         }
+        public string Return_All_login_Query()
+        {
+            string query = "select * from login";
+            return query;
+        }
         public string Return_UserName_Query(string name)
         {
             string query = "select * from login where user_name = '" + name + "'";
@@ -56,10 +61,12 @@ namespace VeriTabaniOdevi
             string query = "Delete from " + table_name;
             return query;
         }
-        public string Insert_Mezun_Query(int u_id, string name, string surname, string id, string date, string email, string okul, string dep, string phone_no, string w_firma, string w_pos, string w_area, string lang, string sertifikalar)
+        public string Insert_Mezun_Query(int u_id, string name, string surname, string id, string date, string email, string okul,
+            string dep, string phone_no, string w_firma, string w_pos, string w_area, string lang, string sertifikalar)
         {
             string query = "INSERT INTO mezun(user_id,name, surname, id_no, Date_of_birth,email,mezunOkul, mezunDep, phone_number, working_firma, working_pos, working_area, languages, sertifika)" +
-                " VALUES(" + u_id + "," + "'" + name + "'" + "," + "'" + surname + "'" + "," + "'" + id + "'" + "," + "'" + date + "'" + "," + "'" + email + "'" + "," + "'" + okul + "'" + "," + "'" + dep + "'" + "," + "'" + phone_no + "'" + "," + "'" + w_firma + "'" + "," + "'" +
+                " VALUES(" + u_id + "," + "'" + name + "'" + "," + "'" + surname + "'" + "," + "'" + id + "'" + "," + "'" + date + "'" + "," +
+                "'" + email + "'" + "," + "'" + okul + "'" + "," + "'" + dep + "'" + "," + "'" + phone_no + "'" + "," + "'" + w_firma + "'" + "," + "'" +
                 w_pos + "'" + "," + "'" + w_area + "'" + "," + "'" + lang + "'" + "," + "'" + sertifikalar + "'" + ")";
             return query;
         }
@@ -80,6 +87,16 @@ namespace VeriTabaniOdevi
                 "phone_number varchar(50) DEFAULT NULL,working_firma varchar(100) DEFAULT NULL,working_pos varchar(100) DEFAULT NULL," +
                 "working_area varchar(100) DEFAULT NULL,languages varchar(5000) NOT NULL,sertifika varchar(5535) DEFAULT NULL,PRIMARY KEY(id_no)," +
                 "KEY user_id (user_id),CONSTRAINT mezun_id_1 FOREIGN KEY(user_id) REFERENCES login (user_id))";
+            return query;
+        }
+        public string Create_login_Table_Query()
+        {
+            string query = "CREATE TABLE IF NOT EXISTS login (" +
+                "user_id int(20) NOT NULL AUTO_INCREMENT," +
+                "user_name varchar(256) NOT NULL," +
+                "user_password varchar(256) NOT NULL," +
+                "PRIMARY KEY(user_id)" +
+                ")";
             return query;
         }
     }

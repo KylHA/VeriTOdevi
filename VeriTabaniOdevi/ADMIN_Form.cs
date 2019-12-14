@@ -121,7 +121,7 @@ namespace VeriTabaniOdevi
             connection.Close();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Delete_Login_Click(object sender, EventArgs e)
         {
             Connection_user connect_to_db = new Connection_user();
             connection = Mysql_Connect(connection);
@@ -153,6 +153,14 @@ namespace VeriTabaniOdevi
                 MessageBox.Show(ex.Message);
             }
             return connect;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Connection_user connect_to_db = new Connection_user();
+            connection = Mysql_Connect(connection);
+            MySqlCommand cmd = new MySqlCommand(connect_to_db.Create_login_Table_Query(), connection);
+            cmd.ExecuteNonQuery();
         }
     }
 }

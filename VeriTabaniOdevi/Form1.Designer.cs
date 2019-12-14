@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.UserName_BOX = new System.Windows.Forms.TextBox();
             this.Password_BOX = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // button1
@@ -89,6 +91,12 @@
             this.Password_BOX.Size = new System.Drawing.Size(100, 20);
             this.Password_BOX.TabIndex = 5;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -117,6 +125,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox UserName_BOX;
         private System.Windows.Forms.TextBox Password_BOX;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
