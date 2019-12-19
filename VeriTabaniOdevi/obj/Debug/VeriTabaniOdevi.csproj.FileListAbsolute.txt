@@ -16,3 +16,4 @@ C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\bin\Debug\MySql.Data.
 C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\obj\Debug\VeriTabaniOdevi.csproj.CopyComplete
 C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\obj\Debug\VeriTabaniOdevi.ADMIN_Form.resources
 C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\obj\Debug\VeriTabaniOdevi.MainFrame.resources
+C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\obj\Debug\VeriTabaniOdevi.CVFORM.resources

@@ -14,6 +14,9 @@ namespace VeriTabaniOdevi
         private string uid;
         private string password;
 
+      
+        
+
         public string Connect_to_DB()
         {
             server = "localhost";
@@ -33,6 +36,26 @@ namespace VeriTabaniOdevi
         public string Return_All_login_Query()
         {
             string query = "select * from login";
+            return query;
+        }
+        public string Return_All_WorkArea_Query()
+        {
+            string query = "select Work_Area from workareaandpoz where Work_Area is not null";
+            return query;
+        }
+        public string Return_All_WorkPoz_Query()
+        {
+            string query = "select Work_Pos from workareaandpoz where Work_Pos is not null";
+            return query;
+        }
+        public string Insert_Work_Pos_Query(string pos)
+        {
+            string query = "Insert into workareaandpoz(Work_Pos) Values(" + "'"+ pos+"'"+")";
+            return query;
+        }
+        public string Insert_Work_Area_Query(string area)
+        {
+            string query = "Insert into workareaandpoz(Work_Area) Values(" + "'" + area + "'" + ")";
             return query;
         }
         public string Return_UserName_Query(string name)

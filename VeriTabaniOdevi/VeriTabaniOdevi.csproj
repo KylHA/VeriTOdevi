@@ -69,6 +69,12 @@
       <DependentUpon>ADMIN_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Connection_user.cs" />
+    <Compile Include="CVFORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CVFORM.Designer.cs">
+      <DependentUpon>CVFORM.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ADMIN_Form.resx">
       <DependentUpon>ADMIN_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CVFORM.resx">
+      <DependentUpon>CVFORM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -18,12 +18,14 @@ namespace VeriTabaniOdevi
     {
         private MySqlConnection connection;
         List<user_login_list> user_list = new List<user_login_list>();
-
+        MainFrame mainFrame = new MainFrame();
+        
         public Form1()
         {
             InitializeComponent();
 
             Update_user_login_list();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,9 +36,15 @@ namespace VeriTabaniOdevi
             {
                 if (UserName_BOX.Text == item.user_Name && Password_BOX.Text == item.user_Password)
                 {
-                    MessageBox.Show("Succesfully entered");
                     
+                    this.Hide();
                     flag = true;
+
+                    mainFrame.id = item.user_id;
+                    mainFrame.name = item.user_Name;
+                    mainFrame.surname = item.user_Password;
+
+                    mainFrame.Show();
                     break;
                 } 
             }

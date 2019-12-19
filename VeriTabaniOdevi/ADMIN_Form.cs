@@ -17,16 +17,21 @@ namespace VeriTabaniOdevi
     {
 
         private MySqlConnection connection;
+
+        List<WorkArea> workarealist = new List<WorkArea>();
+        List<WorkPoz> workpozlist = new List<WorkPoz>();
+
         public ADMIN_Form()
         {
             InitializeComponent();
+            AddWorkArea_Pos_Update();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             //webScrapeForDATA();
             executeSQLcommend_Insert_University();
-            
+
         }
         void executeSQLcommend_Insert_University()
         {
@@ -107,7 +112,7 @@ namespace VeriTabaniOdevi
             Connection_user connect_to_db = new Connection_user();
             connection = Mysql_Connect(connection);
 
-            MySqlCommand cmd=new MySqlCommand(connect_to_db.Delete_ALL_Table_Values("mezun_universite"),connection);
+            MySqlCommand cmd = new MySqlCommand(connect_to_db.Delete_ALL_Table_Values("mezun_universite"), connection);
             cmd.ExecuteNonQuery();
             connection.Close();
         }
@@ -135,7 +140,7 @@ namespace VeriTabaniOdevi
         private void button5_Click(object sender, EventArgs e)
         {
             Connection_user connect_to_db = new Connection_user();
-            connection =Mysql_Connect(connection);
+            connection = Mysql_Connect(connection);
             MySqlCommand cmd = new MySqlCommand(connect_to_db.Create_Mezun_Table_Query(), connection);
             cmd.ExecuteNonQuery();
         }
@@ -162,5 +167,82 @@ namespace VeriTabaniOdevi
             MySqlCommand cmd = new MySqlCommand(connect_to_db.Create_login_Table_Query(), connection);
             cmd.ExecuteNonQuery();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AddWorkArea_Pos_Update();
+        }
+        void AddWorkArea_Pos_Update()
+        {
+            Connection_user connect_to_DB = new Connection_user();
+            connection = Mysql_Connect(connection);
+            MySqlCommand cmd;
+            listView1.Clear();
+            listView2.Clear();
+
+            if (textBox1.Text != "")
+            {
+                cmd = new MySqlCommand(connect_to_DB.Insert_Work_Area_Query(textBox1.Text), connection);
+                cmd.ExecuteNonQuery();
+            }
+
+            if (textBox2.Text != "")
+            {
+                cmd = new MySqlCommand(connect_to_DB.Insert_Work_Pos_Query(textBox2.Text), connection);
+                cmd.ExecuteNonQuery();
+            }
+
+            UpdateWorkArea_Poz_List();
+
+            foreach (var item in workarealist)
+            {
+                listView1.Items.Add(item.work_Area);
+            }
+
+            foreach (var item in workpozlist)
+            {
+                listView2.Items.Add(item.work_Poz);
+            }
+
+            textBox1.Text = "";
+            textBox2.Text = "";
+        }
+        void UpdateWorkArea_Poz_List()
+        {
+
+            workarealist.Clear();
+            workpozlist.Clear();
+            Connection_user connect_to_DB = new Connection_user();
+            connection = Mysql_Connect(connection);
+
+            MySqlCommand cmd = new MySqlCommand(connect_to_DB.Return_All_WorkArea_Query(), connection);
+            MySqlDataReader dbr = cmd.ExecuteReader();
+
+            while (dbr.Read())
+            {
+                workarealist.Add(new WorkArea { work_Area = dbr[0].ToString() });
+            }
+            dbr.Close();
+
+            cmd = new MySqlCommand(connect_to_DB.Return_All_WorkPoz_Query(), connection);
+            dbr = cmd.ExecuteReader();
+
+            while (dbr.Read())
+            {
+                workpozlist.Add(new WorkPoz { work_Poz = dbr[0].ToString() });
+            }
+            dbr.Close();
+
+        }
+
+    }
+    public class WorkArea
+    {
+        public string work_Area { get; set; }
+        //public string work_Poz { get; set; }
+    }
+    public class WorkPoz
+    {
+        public string work_Poz { get; set; }
     }
 }

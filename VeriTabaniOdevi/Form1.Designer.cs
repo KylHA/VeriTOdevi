@@ -111,6 +111,7 @@
             this.MaximumSize = new System.Drawing.Size(244, 260);
             this.MinimumSize = new System.Drawing.Size(244, 260);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sign Form";
             this.ResumeLayout(false);
             this.PerformLayout();
