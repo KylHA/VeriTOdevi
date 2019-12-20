@@ -13,8 +13,8 @@ namespace VeriTabaniOdevi
     public partial class MainFrame : Form
     {
         public string name, surname;
-        int id;
-        CVFORM cvform = new CVFORM();
+        public string id;
+        
         public MainFrame()
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace VeriTabaniOdevi
         {
             label1.Text = name;
             label3.Text = surname;
-            label4.Text = id;
+            label4.Text = id.ToString();
         }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
@@ -66,7 +66,8 @@ namespace VeriTabaniOdevi
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cvform.userid = id;
+            CVFORM cvform = new CVFORM();
+            cvform.userid = int.Parse(id);
             cvform.Show();
         }
     }

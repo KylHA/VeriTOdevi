@@ -103,6 +103,11 @@ namespace VeriTabaniOdevi
             string query = "select user_id from login where user_name = '" + name + "'";
             return query;
         }
+        public string Return_All_Mezun_Query()
+        {
+            string query = "SELECT * FROM mezun";
+            return query;
+        }
         public string Create_Mezun_Table_Query()
         {
             string query = "CREATE TABLE IF NOT EXISTS mezun (user_id int(11) NOT NULL,name varchar(60) NOT NULL,surname varchar(30) NOT NULL,id_no int(11) NOT NULL," +

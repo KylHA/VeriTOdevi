@@ -19,26 +19,29 @@ namespace VeriTabaniOdevi
 
         public int userid;
         cvlist cv_list = new cvlist();
-        
+
         public CVFORM()
         {
+
             InitializeComponent();
             connection = Mysql_Connect(connection);
+
+
         }
 
         private void CVFORM_Load(object sender, EventArgs e)
         {
-
+            UpdateCVForm();
         }
 
         void UpdateCVForm()
         {
-            MySqlCommand cmd = new MySqlCommand(connect_to_DB.Return_All_login_Query(), connection);
+            MySqlCommand cmd = new MySqlCommand(connect_to_DB.Return_All_Mezun_Query(), connection);
             MySqlDataReader dbr = cmd.ExecuteReader();
 
             while (dbr.Read())
             {
-                if ((int)dbr[0] == userid) 
+                if ((int)dbr[0] == userid)
                 {
                     cv_list.name = dbr[1].ToString();
                     cv_list.surname = dbr[2].ToString();
@@ -51,7 +54,20 @@ namespace VeriTabaniOdevi
                 }
             }
             dbr.Close();
-            foreach
+
+            textBox1.Text = cv_list.name;
+            textBox2.Text = cv_list.surname;
+            textBox3.Text = cv_list.phone_no;
+            textBox4.Text = cv_list.email;
+            comboBox1.Text = cv_list.work_area;
+            comboBox2.Text = cv_list.work_pos;
+            comboBox3.Text = cv_list.work;
+            List<string> temp=new List<string>();
+            for (int i = 0; i < listView1.Items.Count; i++)
+            {
+                temp.Add(listView1.Items[i].ToString());
+            }
+
         }
 
         MySqlConnection Mysql_Connect(MySqlConnection connect)
@@ -69,6 +85,15 @@ namespace VeriTabaniOdevi
             return connect;
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            UpdateCVForm();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            listView1.Items.Add (textBox6.Text);
+        }
     }
     public class cvlist
     {
@@ -80,8 +105,8 @@ namespace VeriTabaniOdevi
         public string work;
         public string work_area;
         public string work_pos;
-        public string[] past_work;
-        public string[] past_work_area;
-        public string[] past_work_pos;
+        public List<string> past_work;
+        public List<string> past_work_area;
+        public List<string> past_work_pos;
     }
 }
