@@ -19,7 +19,6 @@ namespace VeriTabaniOdevi
         {
             InitializeComponent();
             UpdateMainFrame();
-
         }
 
         private void MainFrame_Load(object sender, EventArgs e)
@@ -36,9 +35,7 @@ namespace VeriTabaniOdevi
 
         private void button2_Click(object sender, EventArgs e)
         {
-
             UpdateMainFrame();
-
         }
         void UpdateMainFrame()
         {

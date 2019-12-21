@@ -17,16 +17,16 @@ namespace VeriTabaniOdevi
         private MySqlConnection connection;
         Connection_user connect_to_DB = new Connection_user();
 
+        List<WorkArea> workarealist = new List<WorkArea>();
+        List<WorkPoz> workpozlist = new List<WorkPoz>();
         public int userid;
         cvlist cv_list = new cvlist();
 
         public CVFORM()
         {
-
             InitializeComponent();
             connection = Mysql_Connect(connection);
-
-
+            WorkArea_Poz_List_to_Combo_box();
         }
 
         private void CVFORM_Load(object sender, EventArgs e)
@@ -67,9 +67,46 @@ namespace VeriTabaniOdevi
             {
                 temp.Add(listView1.Items[i].ToString());
             }
-
+        }
+        
+        void WorkArea_Poz_List_to_Combo_box()
+        {
+            UpdateWorkArea_Poz_List();
+            foreach (var item in workarealist)
+            {
+                comboBox5.Items.Add(item.work_Area);
+            }
+            foreach (var item in workpozlist)
+            {
+                comboBox6.Items.Add(item.work_Poz);
+            }
         }
 
+        void UpdateWorkArea_Poz_List()
+        {
+            workarealist.Clear();
+            workpozlist.Clear();
+            Connection_user connect_to_DB = new Connection_user();
+            connection = Mysql_Connect(connection);
+
+            MySqlCommand cmd = new MySqlCommand(connect_to_DB.Return_All_WorkArea_Query(), connection);
+            MySqlDataReader dbr = cmd.ExecuteReader();
+
+            while (dbr.Read())
+            {
+                workarealist.Add(new WorkArea { work_Area = dbr[0].ToString() });
+            }
+            dbr.Close();
+
+            cmd = new MySqlCommand(connect_to_DB.Return_All_WorkPoz_Query(), connection);
+            dbr = cmd.ExecuteReader();
+
+            while (dbr.Read())
+            {
+                workpozlist.Add(new WorkPoz { work_Poz = dbr[0].ToString() });
+            }
+            dbr.Close();
+        }
         MySqlConnection Mysql_Connect(MySqlConnection connect)
         {
             Connection_user connect_to_db = new Connection_user();
@@ -92,7 +129,7 @@ namespace VeriTabaniOdevi
 
         private void button1_Click(object sender, EventArgs e)
         {
-            listView1.Items.Add (textBox6.Text);
+            WorkArea_Poz_List_to_Combo_box();
         }
     }
     public class cvlist

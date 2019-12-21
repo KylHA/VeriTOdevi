@@ -14,9 +14,6 @@ namespace VeriTabaniOdevi
         private string uid;
         private string password;
 
-      
-        
-
         public string Connect_to_DB()
         {
             server = "localhost";
@@ -125,6 +122,11 @@ namespace VeriTabaniOdevi
                 "user_password varchar(256) NOT NULL," +
                 "PRIMARY KEY(user_id)" +
                 ")";
+            return query;
+        }
+        public string Return_Work_Name_Query()
+        {
+            string query = "SELECT Firma_name FROM firma";
             return query;
         }
     }

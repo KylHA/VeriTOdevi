@@ -172,6 +172,7 @@ namespace VeriTabaniOdevi
         {
             AddWorkArea_Pos_Update();
         }
+
         void AddWorkArea_Pos_Update()
         {
             Connection_user connect_to_DB = new Connection_user();
@@ -207,9 +208,9 @@ namespace VeriTabaniOdevi
             textBox1.Text = "";
             textBox2.Text = "";
         }
+
         void UpdateWorkArea_Poz_List()
         {
-
             workarealist.Clear();
             workpozlist.Clear();
             Connection_user connect_to_DB = new Connection_user();
@@ -234,7 +235,6 @@ namespace VeriTabaniOdevi
             dbr.Close();
 
         }
-
     }
     public class WorkArea
     {

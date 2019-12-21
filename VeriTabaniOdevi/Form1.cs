@@ -25,7 +25,6 @@ namespace VeriTabaniOdevi
             InitializeComponent();
 
             Update_user_login_list();
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
