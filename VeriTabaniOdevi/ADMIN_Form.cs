@@ -241,8 +241,4 @@ namespace VeriTabaniOdevi
         public string work_Area { get; set; }
         //public string work_Poz { get; set; }
     }
-    public class WorkPoz
-    {
-        public string work_Poz { get; set; }
-    }
 }

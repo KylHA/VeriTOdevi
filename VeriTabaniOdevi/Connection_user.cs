@@ -30,36 +30,43 @@ namespace VeriTabaniOdevi
             string query = "select * from login where user_name = '" + name + "'and user_password = '" + password + "'";
             return query;
         }
+
         public string Return_All_login_Query()
         {
             string query = "select * from login";
             return query;
         }
+
         public string Return_All_WorkArea_Query()
         {
             string query = "select Work_Area from workareaandpoz where Work_Area is not null";
             return query;
         }
+
         public string Return_All_WorkPoz_Query()
         {
             string query = "select Work_Pos from workareaandpoz where Work_Pos is not null";
             return query;
         }
+
         public string Insert_Work_Pos_Query(string pos)
         {
             string query = "Insert into workareaandpoz(Work_Pos) Values(" + "'"+ pos+"'"+")";
             return query;
         }
+
         public string Insert_Work_Area_Query(string area)
         {
             string query = "Insert into workareaandpoz(Work_Area) Values(" + "'" + area + "'" + ")";
             return query;
         }
+
         public string Return_UserName_Query(string name)
         {
             string query = "select * from login where user_name = '" + name + "'";
             return query;
         }
+
         public string Insert_UserName_and_Password_Query(string name, string password)
         {
             string query = "INSERT INTO login(user_name, user_password) VALUES(" + "'" + name + "'" + "," + "'" + password + "'" + ")";
@@ -71,16 +78,44 @@ namespace VeriTabaniOdevi
             string query = "select University_name_and_dep from okul where University_name_and_dep is not null";
             return query;
         }
+
+        public string Return_ALL_CV_Query()
+        {
+            string query = "select * from cv";
+            return query;
+        }
+
+        public string Return_CV_ID_Query()
+        {
+            string query = "select u_id from cv";
+            return query;
+        }
+
         public string Insert_University_name_and_dep_NN_Query(string uni_name, string dep_name)
         {
             string query = "INSERT INTO mezun_universite(Universite_Name,Universite_Bolum) VALUES(" + "'" + uni_name + "'" + "," + "'" + dep_name + "'" + ")";
             return query;
         }
+
+        public string Insert_CV_Query(int uid,string name, string surname,string phone_no,string email,string websitesi,string work, string workarea, string workpos,string work_area_pos)
+        {
+            string query = "INSERT INTO cv(u_id,name,surname,telefon,email,websitesi,sirket,workarea,workpos,work_area_pos) VALUES ("+uid+","+"'"+name +"'"+","+"'" + surname + "'" + "," + "'" + phone_no +
+                "'" + "," + "'" + email + "'" + "," + "'" + websitesi + "'" + "," +"'"+work+"'" +","+ "'" + workarea + "'" + "," + "'" + workpos + "'" + "," + "'" + work_area_pos + "'"+")";
+            return query;
+        }
+
         public string Delete_ALL_Table_Values(string table_name)
         {
             string query = "Delete from " + table_name;
             return query;
         }
+
+        public string Delete_FROM_CV_Query(int uid)
+        {
+            string query = "Delete from cv where u_id =" +uid;
+            return query;
+        }
+
         public string Insert_Mezun_Query(int u_id, string name, string surname, string id, string date, string email, string okul,
             string dep, string phone_no, string w_firma, string w_pos, string w_area, string lang, string sertifikalar)
         {
@@ -90,21 +125,25 @@ namespace VeriTabaniOdevi
                 w_pos + "'" + "," + "'" + w_area + "'" + "," + "'" + lang + "'" + "," + "'" + sertifikalar + "'" + ")";
             return query;
         }
+
         public string Reset_ALL_Table_Values()
         {
             string query = "ALTER TABLE login AUTO_INCREMENT = 1; ";
             return query;
         }
+
         public string Return_UserID_Query(string name)
         {
             string query = "select user_id from login where user_name = '" + name + "'";
             return query;
         }
+
         public string Return_All_Mezun_Query()
         {
             string query = "SELECT * FROM mezun";
             return query;
         }
+
         public string Create_Mezun_Table_Query()
         {
             string query = "CREATE TABLE IF NOT EXISTS mezun (user_id int(11) NOT NULL,name varchar(60) NOT NULL,surname varchar(30) NOT NULL,id_no int(11) NOT NULL," +
@@ -114,6 +153,7 @@ namespace VeriTabaniOdevi
                 "KEY user_id (user_id),CONSTRAINT mezun_id_1 FOREIGN KEY(user_id) REFERENCES login (user_id))";
             return query;
         }
+
         public string Create_login_Table_Query()
         {
             string query = "CREATE TABLE IF NOT EXISTS login (" +
@@ -124,10 +164,41 @@ namespace VeriTabaniOdevi
                 ")";
             return query;
         }
+
         public string Return_Work_Name_Query()
         {
             string query = "SELECT Firma_name FROM firma";
             return query;
         }
+    }
+
+    public class cvlist
+    {
+        public string name;
+        public string surname;
+        public string phone_no;
+        public string email;
+        public string website;
+        public string work;
+        public string work_area;
+        public string work_pos;
+        public List<string> past_work_area_pos = new List<string>();
+    }
+
+    public class worknames
+    {
+        public string work_Name { get; set; }
+    }
+
+    public class WorkPoz
+    {
+        public string work_Poz { get; set; }
+    }
+
+    public class user_login_list
+    {
+        public string user_id { get; set; }
+        public string user_Name { get; set; }
+        public string user_Password { get; set; }
     }
 }

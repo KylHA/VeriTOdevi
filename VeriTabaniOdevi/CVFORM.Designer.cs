@@ -47,11 +47,11 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.listView2 = new System.Windows.Forms.ListView();
             this.listView3 = new System.Windows.Forms.ListView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ADD_PAST_WORK_BUTTON = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.SAVE_BUTTON = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
@@ -226,15 +226,15 @@
             this.listView3.UseCompatibleStateImageBehavior = false;
             this.listView3.View = System.Windows.Forms.View.List;
             // 
-            // button1
+            // ADD_PAST_WORK_BUTTON
             // 
-            this.button1.Location = new System.Drawing.Point(20, 477);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 69);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Eski Çalısma ekle";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ADD_PAST_WORK_BUTTON.Location = new System.Drawing.Point(20, 477);
+            this.ADD_PAST_WORK_BUTTON.Name = "ADD_PAST_WORK_BUTTON";
+            this.ADD_PAST_WORK_BUTTON.Size = new System.Drawing.Size(75, 69);
+            this.ADD_PAST_WORK_BUTTON.TabIndex = 22;
+            this.ADD_PAST_WORK_BUTTON.Text = "Eski Çalısma ekle";
+            this.ADD_PAST_WORK_BUTTON.UseVisualStyleBackColor = true;
+            this.ADD_PAST_WORK_BUTTON.Click += new System.EventHandler(this.ADD_PAST_WORK_BUTTON_Click);
             // 
             // label9
             // 
@@ -263,15 +263,15 @@
             this.label11.TabIndex = 25;
             this.label11.Text = "Çalışma Alanı";
             // 
-            // button2
+            // SAVE_BUTTON
             // 
-            this.button2.Location = new System.Drawing.Point(80, 629);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 45);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "Kaydet";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.SAVE_BUTTON.Location = new System.Drawing.Point(80, 629);
+            this.SAVE_BUTTON.Name = "SAVE_BUTTON";
+            this.SAVE_BUTTON.Size = new System.Drawing.Size(115, 45);
+            this.SAVE_BUTTON.TabIndex = 26;
+            this.SAVE_BUTTON.Text = "Kaydet";
+            this.SAVE_BUTTON.UseVisualStyleBackColor = true;
+            this.SAVE_BUTTON.Click += new System.EventHandler(this.SAVE_BUTTON_Click);
             // 
             // button3
             // 
@@ -309,7 +309,7 @@
             // 
             // CVFORM
             // 
-            this.AcceptButton = this.button2;
+            this.AcceptButton = this.SAVE_BUTTON;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button3;
@@ -318,11 +318,11 @@
             this.Controls.Add(this.comboBox5);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.SAVE_BUTTON);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ADD_PAST_WORK_BUTTON);
             this.Controls.Add(this.listView3);
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.listView1);
@@ -374,11 +374,11 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.ListView listView3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ADD_PAST_WORK_BUTTON;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button SAVE_BUTTON;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.ComboBox comboBox5;

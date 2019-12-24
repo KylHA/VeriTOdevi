@@ -53,7 +53,7 @@ namespace VeriTabaniOdevi
                 MessageBox.Show("User name or password don't match");
             }
 
-            if (UserName_BOX.Text == "" && Password_BOX.Text == "")
+            if (UserName_BOX.Text == "admin" && Password_BOX.Text == "admin")
             {
                 ADMIN_Form admin_form = new ADMIN_Form();
 
@@ -66,6 +66,7 @@ namespace VeriTabaniOdevi
             Form2 f2 = new Form2();
             f2.ShowDialog();
         }
+
         MySqlConnection Mysql_Connect(MySqlConnection connect)
         {
             Connection_user connect_to_db = new Connection_user();
@@ -84,7 +85,7 @@ namespace VeriTabaniOdevi
         private void timer1_Tick(object sender, EventArgs e)
         {
             Update_user_login_list();
-        }
+        }//debug icin disable edildi tekrar ac...
 
         public void Update_user_login_list()
         {
@@ -101,18 +102,4 @@ namespace VeriTabaniOdevi
             dbr.Close();
         }
     }
-
-    public class user_login_list
-    {
-        public string user_id { get; set; }
-        public string user_Name { get; set; }
-        public string user_Password { get; set; }
-    }
-
 }
-
-//string[] file = File.ReadAllLines(@"C:\Users\KylHA\Documents\GitHub\VeriTOdevi\VeriTabaniOdevi\Üniversiteler.txt");
-//string output_1 = file[0].Split('\t')[0];
-
-//string output_2 = file[0].Split('\t')[1];
-//MessageBox.Show("first char is :" + output_1+ " / "+output_2);
