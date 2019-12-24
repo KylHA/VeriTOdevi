@@ -56,6 +56,7 @@
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.Delete_Work_Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -108,7 +109,7 @@
             this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(102, 60);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(268, 20);
             this.textBox1.TabIndex = 5;
             // 
             // textBox2
@@ -116,7 +117,7 @@
             this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(102, 107);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(268, 20);
             this.textBox2.TabIndex = 6;
             // 
             // textBox3
@@ -124,7 +125,7 @@
             this.textBox3.Enabled = false;
             this.textBox3.Location = new System.Drawing.Point(102, 154);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.Size = new System.Drawing.Size(268, 20);
             this.textBox3.TabIndex = 7;
             // 
             // textBox4
@@ -132,14 +133,14 @@
             this.textBox4.Enabled = false;
             this.textBox4.Location = new System.Drawing.Point(102, 201);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.Size = new System.Drawing.Size(268, 20);
             this.textBox4.TabIndex = 8;
             // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(102, 248);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.Size = new System.Drawing.Size(268, 20);
             this.textBox5.TabIndex = 9;
             // 
             // comboBox1
@@ -148,7 +149,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(102, 289);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(268, 21);
             this.comboBox1.TabIndex = 10;
             // 
             // label6
@@ -175,7 +176,7 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(102, 325);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.Size = new System.Drawing.Size(268, 21);
             this.comboBox2.TabIndex = 12;
             // 
             // label8
@@ -193,23 +194,26 @@
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(102, 361);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.Size = new System.Drawing.Size(268, 21);
             this.comboBox3.TabIndex = 14;
             // 
             // listView1
             // 
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(101, 450);
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(100, 131);
             this.listView1.TabIndex = 16;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // listView2
             // 
             this.listView2.HideSelection = false;
             this.listView2.Location = new System.Drawing.Point(200, 450);
+            this.listView2.MultiSelect = false;
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(100, 131);
             this.listView2.TabIndex = 17;
@@ -220,6 +224,7 @@
             // 
             this.listView3.HideSelection = false;
             this.listView3.Location = new System.Drawing.Point(299, 450);
+            this.listView3.MultiSelect = false;
             this.listView3.Name = "listView3";
             this.listView3.Size = new System.Drawing.Size(100, 131);
             this.listView3.TabIndex = 18;
@@ -228,7 +233,7 @@
             // 
             // ADD_PAST_WORK_BUTTON
             // 
-            this.ADD_PAST_WORK_BUTTON.Location = new System.Drawing.Point(20, 477);
+            this.ADD_PAST_WORK_BUTTON.Location = new System.Drawing.Point(20, 450);
             this.ADD_PAST_WORK_BUTTON.Name = "ADD_PAST_WORK_BUTTON";
             this.ADD_PAST_WORK_BUTTON.Size = new System.Drawing.Size(75, 69);
             this.ADD_PAST_WORK_BUTTON.TabIndex = 22;
@@ -282,6 +287,7 @@
             this.button3.TabIndex = 27;
             this.button3.Text = "Çıkış";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // comboBox4
             // 
@@ -307,6 +313,16 @@
             this.comboBox6.Size = new System.Drawing.Size(101, 21);
             this.comboBox6.TabIndex = 30;
             // 
+            // Delete_Work_Button
+            // 
+            this.Delete_Work_Button.Location = new System.Drawing.Point(26, 524);
+            this.Delete_Work_Button.Name = "Delete_Work_Button";
+            this.Delete_Work_Button.Size = new System.Drawing.Size(62, 57);
+            this.Delete_Work_Button.TabIndex = 31;
+            this.Delete_Work_Button.Text = "Eski Çalısma alanı sil";
+            this.Delete_Work_Button.UseVisualStyleBackColor = true;
+            this.Delete_Work_Button.Click += new System.EventHandler(this.Delete_Work_Button_Click);
+            // 
             // CVFORM
             // 
             this.AcceptButton = this.SAVE_BUTTON;
@@ -314,6 +330,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button3;
             this.ClientSize = new System.Drawing.Size(441, 695);
+            this.Controls.Add(this.Delete_Work_Button);
             this.Controls.Add(this.comboBox6);
             this.Controls.Add(this.comboBox5);
             this.Controls.Add(this.comboBox4);
@@ -353,6 +370,11 @@
 
         }
 
+        private void ListView1_Click(object sender, System.EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
         #endregion
 
         private System.Windows.Forms.Label label1;
@@ -383,5 +405,6 @@
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.Button Delete_Work_Button;
     }
 }

@@ -35,7 +35,9 @@ namespace VeriTabaniOdevi
 
         private void button2_Click(object sender, EventArgs e)
         {
-            UpdateMainFrame();
+            ProfileEdit_Form peform = new ProfileEdit_Form();
+            peform.id = id;
+            peform.Show();
         }
         void UpdateMainFrame()
         {

@@ -24,7 +24,7 @@ namespace VeriTabaniOdevi
         public int userid;
         cvlist cv_list = new cvlist();
         string globalpastwork;
-
+        
         public CVFORM()
         {
             InitializeComponent();
@@ -41,17 +41,35 @@ namespace VeriTabaniOdevi
 
         private void ADD_PAST_WORK_BUTTON_Click(object sender, EventArgs e)
         {
+            bool ekleyebilirFlag = true;
             if (comboBox4.Text == "" || comboBox5.Text == "" || comboBox6.Text == "")
             {
                 MessageBox.Show("Seçili Firma/Alan/Pozisyon Boş olamaz");
             }
             else
             {
-                listView1.Items.Add(comboBox4.Text);
-                listView2.Items.Add(comboBox5.Text);
-                listView3.Items.Add(comboBox6.Text);
+                for (int i = 0; i < listView1.Items.Count; i++)
+                {
+                    if (listView1.Items[i].Text == comboBox4.Text)
+                        if (listView2.Items[i].Text == comboBox5.Text)
+                            if (listView3.Items[i].Text == comboBox6.Text)
+                            {
 
-                cv_list.past_work_area_pos.Add("@" + comboBox4.Text + "/" + comboBox5.Text + "/" + comboBox6.Text + "&");
+                                ekleyebilirFlag = false;
+                                break;
+                            }
+                }
+
+                if (ekleyebilirFlag)
+                {
+                    listView1.Items.Add(comboBox4.Text);
+                    listView2.Items.Add(comboBox5.Text);
+                    listView3.Items.Add(comboBox6.Text);
+                    cv_list.past_work_area_pos.Add("@" + comboBox4.Text + "/" + comboBox5.Text + "/" + comboBox6.Text + "&");
+                }
+                else
+                    MessageBox.Show("Aynı değerler tekrar eklenemez!");
+
             }
         }
 
@@ -72,7 +90,7 @@ namespace VeriTabaniOdevi
                 if ((int)dbr[0] == userid)
                     count++;
             }
-                
+
             dbr.Close();
 
             if (count == 1)
@@ -247,6 +265,50 @@ namespace VeriTabaniOdevi
             for (int i = 0; i < cv_list.past_work_area_pos.Count; i++)
             {
                 globalpastwork += cv_list.past_work_area_pos[i];
+            }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int count = 0;
+
+            if (listView1.SelectedItems.Count > 0)
+            {
+                for (int i = 0; i < listView1.Items.Count; i++)
+                {
+                    if (listView1.SelectedItems[0] != listView1.Items[i])
+                    {
+                        count++;
+                    }
+                    else
+                        break;
+                }
+                listView2.Items[count].Selected = true;
+                listView3.Items[count].Selected = true;
+                count = 0;
+                
+            }
+        }
+
+        private void Delete_Work_Button_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count == 0)
+                MessageBox.Show("No item selected");
+
+            else
+            {
+                listView1.Items.Remove(listView1.SelectedItems[0]);
+                listView2.Items.Remove(listView2.SelectedItems[0]);
+                listView3.Items.Remove(listView3.SelectedItems[0]);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DialogResult d = MessageBox.Show("Kaydetmeden Çıkmak ? ", "Dikkat", MessageBoxButtons.YesNo);
+            if (d == DialogResult.Yes)
+            {
+                this.Close();
             }
         }
     }
