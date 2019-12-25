@@ -170,6 +170,15 @@ namespace VeriTabaniOdevi
             string query = "SELECT Firma_name FROM firma";
             return query;
         }
+
+        public string Update_Mezun_Query(string u_id, string name, string surname, string id, string email, string okul,
+            string dep, string phone_no, string w_firma, string w_pos, string w_area, string lang, string sertifikalar)
+        {
+            string query = "UPDATE mezun SET name = "+"'"+name+"'"+","+ " surname =" + "'" + surname + "'" + "," + " id_no = " + "'" + id + "'" + "," + " email = " + "'" + email + "'" + "," + "" +
+                " mezunOkul = " + "'" + okul + "'" + "," + " mezunDep = " + "'" + dep + "'" + "," + " phone_number = " + "'" + phone_no + "'" + "," + " working_firma = " + "'" + w_firma + "'" + "," +
+                " working_area = " + "'" + w_area + "'" + "," + " working_pos = " + "'" + w_pos + "'" + "," + " languages = " + "'" + lang + "'" + "," + " sertifika = " + "'" + sertifikalar + "'"+" WHERE user_id = " + u_id;
+            return query;
+        }
     }
 
     public class cvlist

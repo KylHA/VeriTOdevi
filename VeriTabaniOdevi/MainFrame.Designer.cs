@@ -36,6 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.Exit_Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -109,6 +110,16 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Mezun_Ono";
             // 
+            // Exit_Button
+            // 
+            this.Exit_Button.Location = new System.Drawing.Point(12, 188);
+            this.Exit_Button.Name = "Exit_Button";
+            this.Exit_Button.Size = new System.Drawing.Size(75, 70);
+            this.Exit_Button.TabIndex = 9;
+            this.Exit_Button.Text = "Çıkış";
+            this.Exit_Button.UseVisualStyleBackColor = true;
+            this.Exit_Button.Click += new System.EventHandler(this.Exit_Button_Click);
+            // 
             // MainFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -116,6 +127,8 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ControlBox = false;
+            this.Controls.Add(this.Exit_Button);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -142,5 +155,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button Exit_Button;
     }
 }

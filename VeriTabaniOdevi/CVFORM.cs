@@ -82,7 +82,7 @@ namespace VeriTabaniOdevi
 
             cv_list.website = textBox5.Text;
 
-            MySqlCommand cmd = new MySqlCommand(connect_to_DB.Return_CV_ID_Query(), connection);
+            MySqlCommand cmd = new MySqlCommand(connect_to_DB.Return_CV_ID_Query(), connection);//Update metodu ile performans iyileştirilebilir...
             MySqlDataReader dbr = cmd.ExecuteReader();
 
             while (dbr.Read())
@@ -204,9 +204,6 @@ namespace VeriTabaniOdevi
 
         void Update_Work_Names()
         {
-            Connection_user connect_to_DB = new Connection_user();
-            connection = Mysql_Connect(connection);
-
             MySqlCommand cmd = new MySqlCommand(connect_to_DB.Return_Work_Name_Query(), connection);
             MySqlDataReader dbr = cmd.ExecuteReader();
             while (dbr.Read())

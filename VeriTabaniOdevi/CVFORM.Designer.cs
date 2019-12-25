@@ -330,6 +330,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button3;
             this.ClientSize = new System.Drawing.Size(441, 695);
+            this.ControlBox = false;
             this.Controls.Add(this.Delete_Work_Button);
             this.Controls.Add(this.comboBox6);
             this.Controls.Add(this.comboBox5);
@@ -361,8 +362,10 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(457, 734);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(457, 734);
             this.Name = "CVFORM";
+            this.ShowIcon = false;
             this.Text = "CVFORM";
             this.Load += new System.EventHandler(this.CVFORM_Load);
             this.ResumeLayout(false);

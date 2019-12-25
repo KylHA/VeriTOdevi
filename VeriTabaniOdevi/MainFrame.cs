@@ -63,6 +63,11 @@ namespace VeriTabaniOdevi
             }
         }
 
+        private void Exit_Button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             CVFORM cvform = new CVFORM();
